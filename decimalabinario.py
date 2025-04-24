@@ -12,6 +12,7 @@ def decimal_a_binario(numero):
 
 
 numero = int(input("Ingrese un numero entero positivo: "))
+
 while numero < 0:
     print("ERROR, el número debe ser positivo")
     numero = int(input("Ingrese un número entero positivo: "))
