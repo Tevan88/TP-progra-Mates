@@ -1,3 +1,4 @@
+
 #verifico que el numero sea binario (solo tenga 1s y 0s)
 def verificar_binario(numero):
     resultado = True
@@ -6,7 +7,7 @@ def verificar_binario(numero):
         resultado = False
     return resultado
 
-def numero_a_decimal(numero):
+def binario_a_decimal(numero):
         suma = 0
         for i in range(len(numero)):
             numero = int(numero)
@@ -32,7 +33,7 @@ def ingrese_binario():
     while verificar_binario(binario) == False:
         print("ERROR el número ingresado no es válido")
         binario = input("Ingrese un numero binario: ")
-    binario = numero_a_decimal(binario)
+    binario = binario_a_decimal(binario)
     return binario
 
 def ingrese_decimal():
@@ -55,7 +56,7 @@ opcion = input("Seleccione una opción: ")
 
 if opcion =="1":
     decimal = ingrese_decimal()
-    print(f"El número {numero_a_decimal(decimal)} en binario es: {decimal}")
+    print(f"El número {binario_a_decimal(decimal)} en binario es: {decimal}")
 elif opcion=="2":
     binario = ingrese_binario()
     print(f"El número binario {decimal_a_binario(binario)} en decimal es {binario}")
@@ -75,4 +76,4 @@ elif opcion == "4":
 elif opcion=="5":
     print("Chau")
 else:
-    print("Opcion incorrecta,seleccione una opcion del menú")
+    print("Opción incorrecta, seleccione una opcion del menú")
