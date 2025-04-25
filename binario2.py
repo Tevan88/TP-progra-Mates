@@ -15,33 +15,44 @@ def binario_a_decimal(numero):
             numero = numero // 10
             suma += (2 ** i) * digito
         return suma
-    
-def decimal_a_binario(numero):
+   
+def decimal_a_binario(numero): #Convierte un número decimal a binario y la retorna como string.
+#Definimos las variables a utilizar en la funcion, restos como una lista vacía y numero_final como una cadena vacía
     restos = [] 
     numero_final = "" 
+#Comenzamos un bucle while mientras el numero ingresado sea mayor a 0 y en cada iteración 
+#se calculará el residuo y lo guardaremos en la lista "restos"    
     while numero > 0: 
         resto = numero % 2 
         numero = numero // 2
         restos.append(resto) 
     restos = reversed(restos) 
+#Con un bucle for en cada iteración el valor del residuo i se convierte en una cadena y se concatena al final 
+#de la cadena numero_final que es el valor que retorna la función.    
     for i in restos: 
         numero_final += str(i) 
     return numero_final
-
+#Esta función sirve para corroborar que el número ingresado sea un número binario y retorne el valor ingresado
+#directamente convertido en su equivalente en decimal.
 def ingrese_binario():
     binario = input("Ingrese un numero binario: ")
     while verificar_binario(binario) == False:
         print("ERROR el número ingresado no es válido")
         binario = input("Ingrese un numero binario: ")
+#Aquí reutilizamos la función binario_a_decimal para transformar el número binario corroborado en decimal 
+#y la función lo retorna.
     binario = binario_a_decimal(binario)
     return binario
-
-def ingrese_decimal():
+#Esta función sirve para corroborar que el número ingresado sea entero positivo y retorne el valor ingresado
+#directamente convertido en su equivalente en binario.
+def ingrese_decimal():  
     decimal = int(input("Ingrese un numero entero positivo: "))
     while decimal < 0:
         print("ERROR, el número debe ser positivo")
         decimal = int(input("Ingrese un número entero positivo: "))
-    decimal = decimal_a_binario(decimal)
+#Aquí reutilizamos la función decimal_a_binario para transformar el número decimal corroborado en binario 
+# y la función lo retorna.
+    decimal = decimal_a_binario(decimal) 
     return decimal
 
 
